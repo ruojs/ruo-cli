@@ -4063,7 +4063,7 @@ ruo-ui@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/ruo-ui/-/ruo-ui-1.6.1.tgz#ba59e4c8954d00fbcf57c1c34a395e3d08248260"
 
-ruo@^1.6.5:
+ruo@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/ruo/-/ruo-1.7.0.tgz#f337d7105ba42ff0218ffe239c9d55d12a1ab99b"
   dependencies:
