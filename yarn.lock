@@ -4048,9 +4048,9 @@ run-parallel@^1.1.2:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.1.6.tgz#29003c9a2163e01e2d2dfc90575f2c6c1d61a039"
 
-ruo-swagger-parser@0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/ruo-swagger-parser/-/ruo-swagger-parser-0.1.1.tgz#d995ae84c6de5957938cfb1c3864228e554effc7"
+ruo-swagger-parser@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ruo-swagger-parser/-/ruo-swagger-parser-0.2.0.tgz#87b3a1c5e9e786e4052376780f77cf223df66bda"
   dependencies:
     glob "^7.1.2"
     js-yaml "^3.10.0"
