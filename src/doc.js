@@ -7,7 +7,8 @@ const mkdirp = require('mkdirp')
 const copy = require('ncp')
 const del = require('del')
 const debug = require('debug')('ruo-cli')
-const {rc, parseAsync} = require('ruo')
+const {rc} = require('ruo')
+const parser = require('ruo-swagger-parser')
 
 const {filterByFn} = require('./helpers')
 
@@ -27,7 +28,12 @@ module.exports = (argv) => {
       tags = opts.tags
     }
     // TODO: fix missing `rc.swagger`
-    parseAsync({root: rc.source}).then((spec) => {
+    parser(rc.source,
+      '**/*' + rc.suffix.spec,
+      rc.suffix.spec,
+      'api',
+      rc.shadow
+    ).then((spec) => {
       selectTags(spec, tags)
 
       // filter particular security definitions

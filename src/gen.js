@@ -6,7 +6,8 @@ const inquirer = require('inquirer')
 const mkdirp = require('mkdirp')
 const handlebars = require('handlebars')
 const debug = require('debug')('ruo-cli')
-const {rc, parseAsync, translate} = require('ruo')
+const parser = require('ruo-swagger-parser')
+const {rc, translate} = require('ruo')
 
 const templatePath = rc.templatePath || path.join(__dirname, 'template')
 const EXAMPLE_SPEC = fs.readFileSync(path.join(templatePath, 'spec.hbs'), 'utf8')
@@ -15,7 +16,12 @@ let spec
 let root = rc.source
 
 async function main () {
-  spec = await parseAsync({root})
+  spec = await parser(root,
+    '**/*' + rc.suffix.spec,
+    rc.suffix.spec,
+    'api',
+    rc.shadow
+  )
 
   // 用来记录哪些文件没有被创建
   // xxxx-sepc.yaml最先生成，不记录
@@ -106,7 +112,12 @@ async function askSpec () {
 
   generateSpecFile(uri)
   // 更新spec文件
-  spec = await parseAsync({root})
+  spec = await parser(root,
+    '**/*' + rc.suffix.spec,
+    rc.suffix.spec,
+    'api',
+    rc.shadow
+  )
   // 生成Code和Test文件
   generateTestFile(uri)
   generateCodeFile(uri)
