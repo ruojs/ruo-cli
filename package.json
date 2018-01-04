@@ -54,7 +54,7 @@
     "gulp-watch": "^4.3.10",
     "handlebars": "^4.0.5",
     "inquirer": "^1.0.2",
-    "istanbul": "^0.4.5",
+    "istanbul": "^1.1.0-alpha.1",
     "lodash": "^4.16.4",
     "merge-stream": "^1.0.0",
     "minimist": "^1.2.0",
