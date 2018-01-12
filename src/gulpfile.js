@@ -152,7 +152,7 @@ gulp.task('build-watch', ['cached-build'], () => {
 
 let serveEnv = {
   NODE_ENV: process.env.NODE_ENV || 'development',
-  DEBUG: rc.name
+  DEBUG: process.env.DEBUG || rc.name
 }
 function serve () {
   let env = ''
